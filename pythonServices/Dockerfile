@@ -23,4 +23,4 @@ ENV GOOGLE_APPLICATION_CREDENTIALS=/app/reseupbeta-c88ef5a89753.json
 EXPOSE 5000
 
 # Run the Flask application
-CMD ["python", "app.py"]
+CMD ["python", "indexed.py"]

@@ -1,0 +1,9 @@
+torch==1.11.0
+transformers==4.18.0
+pandas==1.4.1
+Flask==2.2.2          # Choose the latest compatible version
+google-cloud-storage==1.44.0
+numpy==1.21.2         # Common dependency
+requests==2.26.0      # Often needed for HTTP requests
+werkzeug==2.2.2       # Version that is compatible with Flask 2.2.2
+faiss-cpu==1.8.0
