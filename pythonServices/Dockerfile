@@ -19,8 +19,11 @@ COPY . .
 # Set the environment variable for Google Cloud credentials
 ENV GOOGLE_APPLICATION_CREDENTIALS=/app/reseupbeta-c88ef5a89753.json
 
-# Expose port 5000
-EXPOSE 5000
+# Expose port 8080 to match the expected Cloud Run port.
+EXPOSE 8080
+
+# Set the environment variable to tell the application what port to listen on.
+ENV PORT 8080
 
 # Run the Flask application
 CMD ["python", "indexed.py"]

@@ -1,12 +1,15 @@
 import torch
 import pandas as pd
 import faiss
+import numpy as np
+import os
+import logging
+
 from transformers import BertTokenizer, AutoModel
 from flask import Flask, request, jsonify
-import logging
 from io import BytesIO
 from google.cloud import storage
-import numpy as np
+
 
 app = Flask(__name__)
 
@@ -103,5 +106,6 @@ def find_best_response(input_text):
 
     return best_response
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host='0.0.0.0', port=port)
