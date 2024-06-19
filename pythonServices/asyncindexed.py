@@ -38,8 +38,8 @@ def initialize_model_and_data():
         storage_client = storage.Client()
 
         # Define your bucket and file name
-        bucket_name = 'datasetconver'
-        blob_name = 'convo-dataset-fix.csv'
+        bucket_name = 'datasetconversation'
+        blob_name = 'final.csv'
 
         def load_dataset_from_gcs():
             try:

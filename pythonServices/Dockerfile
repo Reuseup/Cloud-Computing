@@ -5,10 +5,10 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Copy the service account key into the container
-COPY reseupbeta-4b1122a5b977.json /app/reseupbeta-4b1122a5b977.json
+COPY reuseup-84a02f6e9ef0.json /app/reuseup-84a02f6e9ef0.json
 
 # Set the environment variable to tell Google Cloud SDK where to find the credentials
-ENV GOOGLE_APPLICATION_CREDENTIALS="/app/reseupbeta-4b1122a5b977.json"
+ENV GOOGLE_APPLICATION_CREDENTIALS="/app/reuseup-84a02f6e9ef0.json"
 
 # Copy the model files into the container
 COPY indobert-lite-base-p1 /app/indobert-lite-base-p1
