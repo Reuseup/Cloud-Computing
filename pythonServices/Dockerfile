@@ -1,11 +1,17 @@
 # Start from a Python image
 FROM python:3.10-slim
 
-# Copy the model files separately for better Docker caching
-COPY indobert-lite-base-p1 /app/indobert-lite-base-p1
-
 # Set the working directory in the container
 WORKDIR /app
+
+# Copy the service account key into the container
+COPY reseupbeta-4b1122a5b977.json /app/reseupbeta-4b1122a5b977.json
+
+# Set the environment variable to tell Google Cloud SDK where to find the credentials
+ENV GOOGLE_APPLICATION_CREDENTIALS="/app/reseupbeta-4b1122a5b977.json"
+
+# Copy the model files into the container
+COPY indobert-lite-base-p1 /app/indobert-lite-base-p1
 
 # Copy the requirements.txt file into the container
 COPY requirements.txt .
